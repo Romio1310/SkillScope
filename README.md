@@ -13,32 +13,32 @@
 
 ---
 
-## ✨ Features
+## Features
 
 ### 📄 Resume Analysis
 - Upload PDF resumes and get an **ATS Score** (0–100) instantly
 - Detailed **Score Breakdown** across 4 key dimensions: Skill Match, Keywords, Resume Quality, Projects
 - Visual radar chart for **Skills by Category**
 
-### 🧠 AI-Powered Insights
+### AI-Powered Insights
 - **Skill Gap Analysis** with High / Medium / Low priority classification
 - **Personalized Learning Roadmap** with resources and time estimates
 - **AI Resume Suggestions** to improve your resume for specific roles
 
-### 👥 Team Workspace
+### Team Workspace
 - Create teams and invite members
 - Share analyses to team workspaces
 - Set ATS score thresholds for candidate screening
 - View team leaderboards and statistics
 
-### 🔒 Secure Authentication
+### Secure Authentication
 - JWT-based authentication with HTTP-only cookies
 - **Strong password policy** (min 8 chars, uppercase, lowercase, number, special character)
 - **Name validation** (letters only — no numbers or special symbols)
 - **Forgot Password** flow with 6-digit OTP verification (email-ready)
 - Rate limiting with 15-minute lockout after 5 failed login attempts
 
-### 📊 Dashboard & Analytics
+### Dashboard & Analytics
 - Total analyses, average score, highest score, latest score statistics
 - Resume comparison mode (compare up to 5 resumes side-by-side)
 - **PDF Export** of full analysis reports
@@ -46,7 +46,7 @@
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -58,7 +58,7 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 SkillScope/
@@ -86,7 +86,7 @@ SkillScope/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -159,11 +159,11 @@ With both servers running:
 python backend_test.py
 ```
 
-Expected: **96/96 tests passed** ✅
+Expected: **96/96 tests passed** 
 
 ---
 
-## 🔐 Environment Variables
+## Environment Variables
 
 ### Backend (`backend/.env`)
 
@@ -184,7 +184,7 @@ Expected: **96/96 tests passed** ✅
 
 ---
 
-## 📡 API Endpoints
+## API Endpoints
 
 ### Authentication
 | Method | Endpoint | Description |
@@ -230,7 +230,7 @@ Expected: **96/96 tests passed** ✅
 
 ---
 
-## 🔑 Password Policy
+## Password Policy
 
 All passwords must meet the following requirements:
 
@@ -242,13 +242,13 @@ All passwords must meet the following requirements:
 
 ---
 
-## 📧 Forgot Password (OTP)
+## Forgot Password (OTP)
 
 > **Note:** In local development, OTP codes are printed directly to the **backend terminal** (no external SMTP required). To enable real email delivery, configure SMTP settings in `backend/.env`.
 
 ---
 
-## 🛠️ Development Notes
+## Development Notes
 
 - The `backend/emergentintegrations/` directory contains a **mock stub** for the original proprietary LLM integration. It can be replaced with any LLM provider (OpenAI, Gemini, etc.)
 - Resume text extraction is done using `PyPDF2` — ensure resumes are text-based PDFs (not scanned images)
@@ -256,13 +256,13 @@ All passwords must meet the following requirements:
 
 ---
 
-## 📜 License
+## License
 
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
 
