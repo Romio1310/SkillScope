@@ -38,7 +38,7 @@ export default function TeamsPage() {
   }, []);
 
   useEffect(() => { fetchTeams(); }, [fetchTeams]);
-  useEffect(() => { if (selectedTeam?.id) fetchTeamDetail(selectedTeam.id); }, [selectedTeam?.id]);
+  useEffect(() => { if (selectedTeam?.id) fetchTeamDetail(selectedTeam.id); }, [selectedTeam?.id, fetchTeamDetail]);
 
   const fetchAnalyses = async () => {
     const { data } = await axios.get(`${API}/analyses`, { withCredentials: true });
