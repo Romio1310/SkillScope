@@ -84,8 +84,9 @@ async def get_current_user(request: Request) -> dict:
         raise HTTPException(status_code=401, detail="Invalid token")
 
 def set_auth_cookies(response, access_token, refresh_token):
-    response.set_cookie(key="access_token", value=access_token, httponly=True, secure=False, samesite="lax", max_age=7200, path="/")
-    response.set_cookie(key="refresh_token", value=refresh_token, httponly=True, secure=False, samesite="lax", max_age=604800, path="/")
+    is_production = os.environ.get("ENVIRONMENT", "production") != "development"
+    response.set_cookie(key="access_token", value=access_token, httponly=True, secure=is_production, samesite="none" if is_production else "lax", max_age=7200, path="/")
+    response.set_cookie(key="refresh_token", value=refresh_token, httponly=True, secure=is_production, samesite="none" if is_production else "lax", max_age=604800, path="/")
 
 # ─── AUTH VALIDATIONS ───
 import re
@@ -1371,7 +1372,12 @@ app.include_router(api_router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "https://skill-scope-3jg2.vercel.app",
+        os.environ.get("FRONTEND_URL", ""),
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
